@@ -65,7 +65,7 @@ connection().then(() => {
     console.log('connection successful')
 })
 async function connection(){
-    mongoose.connect(process.env.MONGO_URI);
+   await mongoose.connect(process.env.MONGO_URI);
 }
 
 
