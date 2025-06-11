@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <form action="/<%= newurl.shortId  %>/analytics" method="post" class="animate-form">
                 <label for="url" class='form-label'>Copy The Shortened URL:</label>
-              <input id="url" value="<%= fullShortUrl %>" type="text" class="form-control" readonly>
+              <input id="url" value="<%= newurl.shortId %>" type="text" class="form-control" readonly>
 <a href="<%= fullShortUrl %>" class="btn btn-success mt-3 w-100" target="_blank">Visit Shortened URL</a>
 
                 <button class="btn btn-warning mt-3 w-100">See Analytics</button>
