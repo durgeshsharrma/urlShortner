@@ -27,8 +27,14 @@ router.post('/',isLoggedIn ,async (req , res) => {
         console.log(res)
      })
 
+ 
+
      
-     res.render('url/shortenurl' , {newurl})
+     // 👇 Construct the full short URL using your deployed frontend base URL
+        const fullShortUrl = `https://url-shortner-2rb9.onrender.com//${shortId}`;
+
+        // 👇 Render the shortenurl.ejs and pass fullShortUrl
+        res.render('url/shortenurl', { newurl, fullShortUrl });
      req.flash('success', 'URL shortened successfully!');
 })
 
