@@ -1,0 +1,15 @@
+<%- layout('/layouts/boilerplate') %>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow animate-card">
+                <div class="card-body text-center">
+                    <h1 class="card-title text-primary">Your Shortened URL</h1>
+                    <h3>No. of Visits: <%= urlFinded.visitHistory.length %></h3>
+                    <label for="url" class='form-label'>Copy The Shortened URL:</label>
+                    <input id="url" name="redirectUrl" value="<%= urlFinded.shortId %>" type="text" class="form-control" required readonly>
+                   
+            </div>
+        </div>
+    </div>
+</div>

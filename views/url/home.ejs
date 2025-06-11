@@ -1,0 +1,13 @@
+<%- layout('layouts/boilerplate') %>
+<div class="row justify-content-center bg-lig mt-5">
+    <div class="col-md-8">
+        <h1 class="text-primary text-center">Shorten Your URL</h1>
+        <form action="/" method="POST">
+            <div class="mb-3">
+                <label for="url" class="form-label">Paste your URL here:</label>
+                <input type="text" id="url" name="redirectUrl" class="form-control" placeholder="Enter your long URL" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Shorten URL</button>
+        </form>
+    </div>
+</div>

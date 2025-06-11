@@ -1,0 +1,14 @@
+
+<%- layout('/layouts/boilerplate') %>
+<div class="container-form mt-5">
+    <h1 class="text-center text-primary mb-4">Your Shortened URL</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form action="/<%= newurl.shortId  %>/analytics" method="post" class="animate-form">
+                <label for="url" class='form-label'>Copy The Shortened URL:</label>
+                <input id="url" name="redirectUrl" value="<%= newurl.shortId %>" type="text" class="form-control" required readonly>
+                <button class="btn btn-warning mt-3 w-100">See Analytics</button>
+            </form>
+        </div>
+    </div>
+</div>

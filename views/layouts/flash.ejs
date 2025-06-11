@@ -1,0 +1,13 @@
+<!-- Display success message -->
+<% if (succMsg.length && succMsg) { %>
+  <div class="alert alert-success fade show animated-alert" role="alert">
+      <%= succMsg %>
+  </div>
+<% } %>
+
+<!-- Display error message -->
+<% if (errMsg.length && errMsg) { %>
+  <div class="alert alert-danger fade show animated-alert" role="alert">
+      <%= errMsg %>
+  </div>
+<% } %>
