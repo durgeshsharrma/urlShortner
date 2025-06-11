@@ -86,10 +86,23 @@ router.post('/login' , passport.authenticate('local' , {failreRedirect : '/login
 
 
 router.get('/:shortId' , async(req , res) => {
-    let {shortId} = req.params;
-     let findByShortId = await url.findOneAndUpdate({shortId} , {$push : {visitHistory :{timestamp : Date.now}}});
-    
-     res.redirect(findByShortId.redirectUrl);
+    const { shortId } = req.params;
+  
+    try {
+      const findByShortId = await url.findOneAndUpdate(
+        { shortId },
+        { $push: { visitHistory: { timestamp: Date.now() } } }
+      );
+  
+      if (!findByShortId) {
+        return res.status(404).send("Short URL not found");
+      }
+  
+      res.redirect(findByShortId.redirectUrl);
+    } catch (error) {
+      console.error("Error in redirect route:", error);
+      res.status(500).send("Internal Server Error");
+    }
     
     
     
