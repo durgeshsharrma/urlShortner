@@ -10,6 +10,9 @@ const localStrategy = require('passport-local');
 const session = require('express-session');
 const userRoute  = require('./routes/user');
 const user = require('./models/user')
+const dotenv = require('dotenv')
+dotenv.config()
+
 
 
 app.use(express.static(path.join(__dirname , '/public')));
@@ -62,7 +65,7 @@ connection().then(() => {
     console.log('connection successful')
 })
 async function connection(){
-    mongoose.connect('mongodb://127.0.0.1:27017/urlShortner');
+    mongoose.connect(process.env.MONGO_URI);
 }
 
 
